@@ -4,7 +4,7 @@ import scipy.spatial.distance as dist
 import xarray as xr
 
 
-def simi_betw_nl_de(vec_de, vec_nl, feature_de_path, feature_nl_path):
+def simi(vec_de, vec_nl, feature_de_path, feature_nl_path):
     vde = pd.Series(vec_de)
     vnl = pd.Series(vec_nl)
 

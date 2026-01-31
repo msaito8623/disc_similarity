@@ -61,9 +61,9 @@ disc-similarity de_transcriptions.txt nl_transcriptions.txt -o results.tsv
 ### Python API
 
 ```python
-from disc_similarity import simi_betw_nl_de
+from disc_similarity import simi
 
-similarities, skipped = simi_betw_nl_de(
+similarities, skipped = simi(
     vec_de=["pakt", "hUnt"],
     vec_nl=["pAkt", "hOnt"],
     feature_de_path="path/to/feature_de.csv",
