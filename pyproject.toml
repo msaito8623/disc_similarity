@@ -19,6 +19,9 @@ dependencies = [
     "scipy",
 ]
 
+[project.optional-dependencies]
+test = ["pytest"]
+
 [project.scripts]
 disc-similarity = "disc_similarity.cli:main"
 
