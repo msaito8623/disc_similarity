@@ -13,7 +13,7 @@ similarity between these word-level vectors.
 ## Installation
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/msaito8623/disc_similarity.git
 cd disc_similarity
 pip install -r requirements.txt
 ```
