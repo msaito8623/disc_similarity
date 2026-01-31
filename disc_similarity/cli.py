@@ -4,7 +4,7 @@ from importlib.resources import files
 
 import pandas as pd
 
-from .similarity import simi_betw_nl_de
+from .similarity import simi as compute_simi
 
 
 def _default_feature_path(filename):
@@ -49,8 +49,8 @@ examples:
             vec_nl = pd.Series([line.strip().replace("'", "").replace("-", "") for line in f])
         dat = pd.DataFrame({args.col_de: vec_de, args.col_nl: vec_nl})
 
-    simi, skipped = simi_betw_nl_de(vec_de, vec_nl, args.feature_de, args.feature_nl)
-    dat["simi"] = simi
+    similarities, skipped = compute_simi(vec_de, vec_nl, args.feature_de, args.feature_nl)
+    dat["simi"] = similarities
 
     if args.output is None:
         stem = os.path.splitext(args.input_file)[0]
