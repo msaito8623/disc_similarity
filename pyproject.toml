@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools >= 68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "disc-similarity"
+version = "0.1.0"
+description = "Cosine similarity between Dutch and German DISC transcriptions using phonemic feature vectors"
+readme = "README.md"
+license = "MIT"
+requires-python = ">= 3.9"
+authors = [
+    { name = "Motoki Saito", email = "motokisaito.8623@gmail.com" },
+]
+dependencies = [
+    "pandas",
+    "numpy",
+    "xarray",
+    "scipy",
+]
+
+[project.scripts]
+disc-similarity = "disc_similarity.cli:main"
+
+[tool.setuptools.package-data]
+disc_similarity = ["*.csv"]

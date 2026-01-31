@@ -15,17 +15,25 @@ similarity between these word-level vectors.
 ```bash
 git clone https://github.com/msaito8623/disc_similarity.git
 cd disc_similarity
-pip install -r requirements.txt
+pip install .
+```
+
+For development (editable install):
+
+```bash
+pip install -e .
 ```
 
 ## Usage
 
-### CSV mode
+### CLI
+
+#### CSV mode
 
 Process a single CSV/TSV file containing paired Dutch and German DISC transcriptions:
 
 ```bash
-python main.py wordlist.csv --sep ";" --encoding latin-1 -o output.tsv
+disc-similarity wordlist.csv --sep ";" --encoding latin-1 -o output.tsv
 ```
 
 Options:
@@ -35,20 +43,33 @@ Options:
 - `--col-nl` — column name for Dutch DISC strings (default: `PhonStrsDISC_NL`)
 - `--encoding` — input file encoding (default: `latin-1`)
 
-### Two-file mode
+#### Two-file mode
 
 Provide two plain-text files, each containing one DISC transcription per line, paired by line number:
 
 ```bash
-python main.py de_transcriptions.txt nl_transcriptions.txt -o results.tsv
+disc-similarity de_transcriptions.txt nl_transcriptions.txt -o results.tsv
 ```
 
-### Common options
+#### Common options
 
 - `-o`, `--output` — output file path (default: `<input_stem>_with_similarity.tsv`)
 - `--output-sep` — output CSV separator (default: tab)
-- `--feature-de` — path to German feature matrix (default: `feature_de.csv` next to the script)
-- `--feature-nl` — path to Dutch feature matrix (default: `feature_nl.csv` next to the script)
+- `--feature-de` — path to German feature matrix (default: bundled `feature_de.csv`)
+- `--feature-nl` — path to Dutch feature matrix (default: bundled `feature_nl.csv`)
+
+### Python API
+
+```python
+from disc_similarity import simi_betw_nl_de
+
+similarities, skipped = simi_betw_nl_de(
+    vec_de=["pakt", "hUnt"],
+    vec_nl=["pAkt", "hOnt"],
+    feature_de_path="path/to/feature_de.csv",
+    feature_nl_path="path/to/feature_nl.csv",
+)
+```
 
 ## Feature matrix format
 
