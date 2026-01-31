@@ -15,14 +15,30 @@ similarity between these word-level vectors.
 ```bash
 git clone https://github.com/msaito8623/disc_similarity.git
 cd disc_similarity
+```
+
+### pip
+
+```bash
 pip install .
 ```
 
-For development (editable install):
+### uv
 
 ```bash
-pip install -e .
+uv pip install .
 ```
+
+### conda
+
+Activate your conda environment, then install with pip:
+
+```bash
+conda activate myenv
+pip install .
+```
+
+For development (editable install), replace `install .` with `install -e .` in any of the above commands.
 
 ## Usage
 
