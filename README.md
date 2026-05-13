@@ -96,6 +96,22 @@ The feature matrices (`feature_de.csv`, `feature_nl.csv`) are tab-separated file
 | p         | Pakt    | 1        |             |          | ... |
 
 
+## Citation
+
+If you use this package, please cite it. Citation metadata is provided in [`CITATION.cff`](CITATION.cff).
+
+BibTeX:
+
+```bibtex
+@software{saito_disc_similarity,
+  author  = {Saito, Motoki},
+  year    = {2026},
+  title   = {disc\_similarity: Cosine similarity between Dutch and German DISC transcriptions using phonemic feature vectors},
+  version = {0.1.0},
+  url     = {https://github.com/msaito8623/disc_similarity},
+}
+```
+
 ## License
 
 MIT

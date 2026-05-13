@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "disc_similarity: Cosine similarity between Dutch and German DISC transcriptions using phonemic feature vectors"
+abstract: >-
+  A Python package and CLI for computing cosine similarity between paired
+  Dutch and German phonemic transcriptions in DISC encoding, using binary
+  articulatory feature vectors.
+type: software
+authors:
+  - family-names: Saito
+    given-names: Motoki
+    email: motokisaito.8623@gmail.com
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/msaito8623/disc_similarity"
+url: "https://github.com/msaito8623/disc_similarity"
+keywords:
+  - phonology
+  - phonemic-similarity
+  - DISC
+  - Dutch
+  - German
+  - cosine-similarity
